@@ -1,0 +1,5 @@
+name: ElytraCraft
+main: com.binogurestudio.plugin.ElytraCraft
+version: 1.0
+commands:
+  
