@@ -3,28 +3,31 @@ package com.binogurestudio.plugin;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
+
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
+
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class ElytraCraft extends JavaPlugin {
     // Fired when plugin is first enabled
     public void onEnable() {
-    	ItemStack itemstack = new ItemStack(Material.ELYTRA);
-    	NamespacedKey namespacedKey = new NamespacedKey(this, "elytraPlus");
+    	ItemStack item = new ItemStack(Material.ELYTRA, 1);
 
-    	ShapedRecipe recipe = new ShapedRecipe(namespacedKey, itemstack);
+    	NamespacedKey namespacedKey = new NamespacedKey(this, this.getClass().getSimpleName());
+
+    	ShapedRecipe recipe = new ShapedRecipe(namespacedKey, item);
     	
     	recipe.shape(new String[] {
-			"WVW",
-			"L L",
-			"S S"
+			"PWP",
+			"PSP",
+			"F F"
 		});
     			
-    	recipe.setIngredient('S', Material.STICK);
-    	recipe.setIngredient('L', Material.LEATHER);
-    	recipe.setIngredient('W', Material.WOOL);
-    	recipe.setIngredient('V', Material.FEATHER);
+    	recipe.setIngredient('W', Material.STICK);
+    	recipe.setIngredient('P', Material.PAPER);
+    	recipe.setIngredient('S', Material.STRING);
+    	recipe.setIngredient('F', Material.FEATHER);
     	
     	Bukkit.addRecipe(recipe);
     }
